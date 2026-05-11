@@ -839,8 +839,12 @@ input:focus, textarea:focus {
     .blob1 {
         width: calc(100% + 32px);
         margin: 20px -16px 0;
-        position: static;
+        position: relative;
         animation: none;
+    }
+
+    .blob1::before {
+        display: none;
     }
 
     .blob-card {
