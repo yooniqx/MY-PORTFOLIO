@@ -52,7 +52,7 @@ window.onclick = (e) => {
     if (e.target == modal) modal.style.display = "none";
 };
 
-// Contact Form Storage
+// Contact Form - Mailto System
 const contactForm = document.getElementById("contactForm");
 const contactStatus = document.getElementById("contactStatus");
 
@@ -63,18 +63,48 @@ contactForm.addEventListener("submit", (e) => {
     const email = document.getElementById("contactEmail").value.trim();
     const message = document.getElementById("contactMessage").value.trim();
 
-    const contactEntry = {
-        name,
-        email,
-        message,
-        savedAt: new Date().toISOString(),
-    };
+    // Basic validation
+    if (!name || name.length < 2) {
+        contactStatus.textContent = "Please enter a valid name (at least 2 characters).";
+        contactStatus.classList.remove("success");
+        contactStatus.style.color = "#ef4444";
+        return;
+    }
 
-    const storedContacts = JSON.parse(localStorage.getItem("portfolioContacts") || "[]");
-    storedContacts.push(contactEntry);
-    localStorage.setItem("portfolioContacts", JSON.stringify(storedContacts));
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email || !emailRegex.test(email)) {
+        contactStatus.textContent = "Please enter a valid email address.";
+        contactStatus.classList.remove("success");
+        contactStatus.style.color = "#ef4444";
+        return;
+    }
 
-    contactStatus.textContent = "Your message has been saved locally. Thank you for reaching out!";
+    if (!message || message.length < 10) {
+        contactStatus.textContent = "Please enter a message (at least 10 characters).";
+        contactStatus.classList.remove("success");
+        contactStatus.style.color = "#ef4444";
+        return;
+    }
+
+    // Create mailto link
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${name}`);
+    const body = encodeURIComponent(
+        `Name: ${name}\n\nEmail: ${email}\n\nMessage:\n${message}`
+    );
+    const mailtoLink = `mailto:dbose0906@gmail.com?subject=${subject}&body=${body}`;
+
+    // Open default mail client
+    window.location.href = mailtoLink;
+
+    // Show success message
+    contactStatus.textContent = "Opening your email client... Please send the email to complete your inquiry.";
     contactStatus.classList.add("success");
-    contactForm.reset();
+    contactStatus.style.color = "#34d399";
+
+    // Reset form after a short delay
+    setTimeout(() => {
+        contactForm.reset();
+        contactStatus.textContent = "";
+    }, 3000);
 });
