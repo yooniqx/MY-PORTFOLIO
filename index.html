@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Debopriya Bose</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div id="particles"></div>
+
+<header id="navbar">
+    <h2 class="logo">DB Portfolio Website</h2>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+
+    <nav id="nav">
+        <a href="#home">Home</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact" class="btn">Contact</a>
+    </nav>
+</header>
+
+<section id="home" class="hero">
+    <div class="hero-text">
+        <div class="hero-avatar">
+            <img src="pfp.jpeg" alt="Debopriya Bose">
+        </div>
+        <h1 class="name">Debopriya <span>Bose</span></h1>
+        <p id="typing" class="webdesigner"></p>
+        <p class="about">Hi, I am a second-year B.Tech Computer Science Engineering student at KIIT DU, Bhubaneswar, with a strong interest in web designing and development.<br>I enjoy creating visually appealing and functional digital experiences, and I am continuously working on improving my skills in front-end development and user-centric design. Alongside web development, I have a growing interest in UI/UX design, graphics, and video editing, which allows me to approach projects with both technical and creative perspectives.</p>
+        <div class="connections">
+            <p><a href="https://github.com/yooniqx" target="_blank">Github</a></p>
+            <p><a href="https://www.linkedin.com/in/dbose2006/" target="_blank">LinkedIn</a></p>
+            <p><a href="https://wellfound.com/u/debopriya-bose-1" target="_blank">Wellfound</a></p>
+        </div>
+        <button class="btn" id="openResume">View Resume</button>
+    </div>
+
+    <div class="blob blob1">
+        <div class="blob-card">
+            <h3>Why hire me?</h3>
+            <p>I build polished front-end web designs with clean UI, fast performance and reliable code. I can help turn your idea into a working website that looks great and eye-catchy. I am always eager to learn, explore new tools and technologies, and collaborate on creative and impactful projects.</p>
+        </div>
+    </div>
+</section>
+
+<section id="skills">
+    <h2>My Expertise</h2>
+    <div class="cards">
+        <div class="card">HTML</div>
+        <div class="card">CSS</div>
+        <div class="card">JavaScript</div>
+        <div class="card">Python</div>
+        <div class="card">Java</div>
+        <div class="card">C</div>
+        <div class="card">SQL</div>
+        <div class="card">UI/UX</div>
+    </div>
+</section>
+
+<section id="projects">
+    <h2>My Projects</h2>
+    <div class="projects">
+
+        <div class="project">
+            <img src="images/p1.jpg">
+            <div class="overlay">
+                <h3>Project 1</h3>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+
+        <div class="project">
+            <img src="images/p2.jpg">
+            <div class="overlay">
+                <h3>Project 2</h3>
+                <a href="#">Live Demo</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="contact-title">Contact Me for Your Project</h2>
+    <p class="contact-para">Looking for a web developer or designer? Send me a message to discuss your project.</p>
+    <form id="contactForm" class="contact-form">
+        <input id="contactName" type="text" placeholder="Your Name" required>
+        <input id="contactEmail" type="email" placeholder="Email" required>
+        <textarea id="contactMessage" placeholder="Project details / Message" required></textarea>
+        <button type="submit" class="btn">Submit</button>
+    </form>
+    <p id="contactStatus" class="status-message"></p>
+</section>
+
+<!-- RESUME MODAL -->
+<div id="resumeModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <iframe id="resumeFrame" src="" title="Resume Preview"></iframe>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
