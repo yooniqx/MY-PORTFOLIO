@@ -26,6 +26,7 @@ body {
 header {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     padding: 20px 50px;
     position: fixed;
     top: 0;
@@ -33,6 +34,7 @@ header {
     right: 0;
     width: 100%;
     backdrop-filter: blur(10px);
+    background: rgba(15, 23, 42, 0.8);
     z-index: 100;
 }
 
@@ -102,8 +104,10 @@ nav a:hover::after {
     cursor: pointer;
     transition: 0.3s;
     font-size: 16px;
-    width: 150px;
-
+    width: auto;
+    min-width: 150px;
+    display: inline-block;
+    text-align: center;
 }
 
 .btn:hover {
@@ -287,9 +291,10 @@ section.show {
     background: rgba(255,255,255,0.05);
     backdrop-filter: blur(10px);
     padding: 20px;
-    margin: 5px;
+    margin: 0;
     border-radius: 12px;
     transition: 0.3s;
+    text-align: center;
 }
 
 .card:hover {
@@ -517,36 +522,46 @@ input:focus, textarea:focus {
 /* RESPONSIVE */
 @media(max-width: 768px){
     body {
-        padding-top: 70px;
+        padding-top: 60px;
     }
 
     header {
-        padding: 15px 25px;
+        padding: 12px 20px;
+    }
+
+    .logo {
+        font-size: 1.15rem;
     }
 
     .menu-toggle {
         display: block;
+        font-size: 26px;
     }
 
     nav {
         position: absolute;
-        top: 60px;
+        top: 52px;
         right: 0;
         left: 0;
-        background: rgba(30, 41, 59, 0.98);
+        background: rgba(15, 23, 42, 0.98);
         backdrop-filter: blur(10px);
         flex-direction: column;
         display: none;
-        padding: 20px;
+        padding: 15px 20px;
         border-radius: 0 0 12px 12px;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.5);
     }
 
     nav a {
-        margin: 10px 0;
-        padding: 10px;
+        margin: 8px 0;
+        padding: 12px;
         text-align: center;
-        font-size: 16px;
+        font-size: 15px;
+        border-radius: 8px;
+    }
+
+    nav a:hover {
+        background: rgba(168, 85, 247, 0.1);
     }
 
     nav.active {
@@ -555,8 +570,9 @@ input:focus, textarea:focus {
 
     .hero {
         flex-direction: column;
-        padding: 30px 20px 0;
+        padding: 20px 20px 0;
         min-height: auto;
+        margin-top: 0;
     }
 
     .hero-text {
@@ -565,132 +581,175 @@ input:focus, textarea:focus {
     }
 
     .hero-avatar {
-        width: 120px;
-        height: 120px;
-        margin: 0 auto 20px;
+        width: 110px;
+        height: 110px;
+        margin: 0 auto 18px;
+        border-width: 3px;
     }
 
     .name {
-        font-size: 2rem;
+        font-size: 1.85rem;
         text-align: center;
+        margin-bottom: 8px;
     }
 
     .webdesigner {
-        font-size: 18px;
+        font-size: 17px;
         text-align: center;
+        margin-top: 8px;
+        margin-bottom: 16px;
     }
 
     .about {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
         text-align: center;
         max-width: 100%;
+        line-height: 1.55;
+        padding: 0 10px;
     }
 
     .connections {
         justify-content: center;
-        font-size: 0.9rem;
+        font-size: 0.88rem;
+        margin: 16px 0;
+        gap: 8px;
+    }
+
+    .connections p {
+        font-size: 0.88rem;
     }
 
     .btn {
-        width: 100%;
-        max-width: 200px;
+        width: auto;
+        min-width: 160px;
+        max-width: 100%;
         margin: 0 auto;
+        padding: 11px 20px;
     }
 
     #home button {
         display: block;
-        margin: 10px auto 0;
+        margin: 12px auto 0;
     }
 
     .blob1 {
         position: relative;
-        width: 100%;
+        width: calc(100% + 40px);
         height: auto;
-        margin-top: 30px;
+        margin: 25px -20px 0;
         right: 0;
         top: 0;
     }
 
+    .blob::before {
+        filter: blur(40px);
+    }
+
     .blob-card {
-        padding: 24px;
+        padding: 22px;
+        border-radius: 20px;
     }
 
     .blob-card h3 {
-        font-size: 1.2rem;
+        font-size: 1.15rem;
+        margin-bottom: 10px;
     }
 
     .blob-card p {
-        font-size: 0.9rem;
+        font-size: 0.88rem;
+        line-height: 1.6;
     }
 
     section {
-        padding: 50px 20px;
+        padding: 45px 20px;
     }
 
     section h2 {
-        font-size: 1.8rem;
+        font-size: 1.7rem;
         text-align: center;
+        margin-bottom: 25px;
     }
 
     .cards {
-        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-        gap: 15px;
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 12px;
+        padding-top: 20px;
     }
 
     .card {
-        padding: 15px;
-        font-size: 0.9rem;
+        padding: 14px 10px;
+        font-size: 0.88rem;
     }
 
     .project-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
+        gap: 18px;
     }
 
     .category-title {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         text-align: center;
+        margin-bottom: 18px;
     }
 
     .preview-card {
-        padding: 20px;
+        padding: 18px;
+    }
+
+    .preview-card-header h4 {
+        font-size: 1.15rem;
+    }
+
+    .preview-card-desc {
+        font-size: 0.88rem;
     }
 
     .contact-title {
-        font-size: 1.5rem;
+        font-size: 1.4rem;
         text-align: center;
     }
 
     .contact-para {
         text-align: center;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
+        padding: 0 10px;
+    }
+
+    .contact-form {
+        max-width: 100%;
     }
 
     input, textarea {
         font-size: 16px;
+        padding: 12px;
+    }
+
+    textarea {
+        min-height: 130px;
     }
 
     #contactForm button {
-        width: 100%;
-        max-width: 200px;
+        width: auto;
+        min-width: 160px;
+        max-width: 100%;
         margin: 18px auto 0;
         display: block;
     }
 
     .modal-content {
-        width: 95%;
-        height: 85vh;
-        margin: 20px;
+        width: 92%;
+        height: 82vh;
+        margin: 20px auto;
     }
 
     .close {
-        font-size: 35px;
-        right: 15px;
-        top: 5px;
+        font-size: 32px;
+        right: 12px;
+        top: 8px;
         z-index: 10;
-        background: rgba(0,0,0,0.5);
-        width: 40px;
-        height: 40px;
+        background: rgba(0,0,0,0.6);
+        width: 38px;
+        height: 38px;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -700,153 +759,201 @@ input:focus, textarea:focus {
 
 @media(max-width: 480px){
     body {
-        padding-top: 65px;
+        padding-top: 55px;
     }
 
     header {
-        padding: 12px 20px;
+        padding: 10px 16px;
     }
 
     .logo {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
     }
 
     .menu-toggle {
         font-size: 24px;
+        padding: 4px;
     }
 
     nav {
-        top: 55px;
-        padding: 15px;
+        top: 48px;
+        padding: 12px 16px;
     }
 
     nav a {
-        font-size: 15px;
-        margin: 8px 0;
+        font-size: 14px;
+        margin: 6px 0;
+        padding: 10px;
     }
 
     .hero {
-        padding: 20px 15px 0;
+        padding: 16px 16px 0;
     }
 
     .hero-avatar {
-        width: 100px;
-        height: 100px;
+        width: 95px;
+        height: 95px;
+        margin: 0 auto 14px;
+        border-width: 3px;
     }
 
     .name {
-        font-size: 1.6rem;
+        font-size: 1.55rem;
+        margin-bottom: 6px;
     }
 
     .webdesigner {
-        font-size: 16px;
+        font-size: 15px;
+        margin-top: 6px;
+        margin-bottom: 14px;
     }
 
     .about {
-        font-size: 0.85rem;
+        font-size: 0.82rem;
         line-height: 1.5;
+        padding: 0 5px;
     }
 
     .connections {
-        font-size: 0.85rem;
-        gap: 8px;
+        font-size: 0.8rem;
+        gap: 6px;
+        margin: 14px 0;
+        flex-wrap: wrap;
     }
 
     .connections p {
-        font-size: 0.85rem;
+        font-size: 0.8rem;
     }
 
     .btn {
-        padding: 10px 16px;
-        font-size: 15px;
+        padding: 10px 18px;
+        font-size: 14px;
+        min-width: 140px;
+    }
+
+    #home button {
+        margin: 10px auto 0;
+    }
+
+    .blob1 {
+        width: calc(100% + 32px);
+        margin: 20px -16px 0;
     }
 
     .blob-card {
-        padding: 20px;
+        padding: 18px;
+        border-radius: 18px;
     }
 
     .blob-card h3 {
-        font-size: 1.1rem;
+        font-size: 1.05rem;
+        margin-bottom: 8px;
     }
 
     .blob-card p {
-        font-size: 0.85rem;
-        line-height: 1.6;
+        font-size: 0.82rem;
+        line-height: 1.55;
     }
 
     section {
-        padding: 40px 15px;
+        padding: 35px 16px;
     }
 
     section h2 {
-        font-size: 1.5rem;
-        margin-bottom: 20px;
+        font-size: 1.4rem;
+        margin-bottom: 18px;
     }
 
     .cards {
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 10px;
+        padding-top: 16px;
     }
 
     .card {
-        padding: 12px;
-        font-size: 0.85rem;
+        padding: 11px 8px;
+        font-size: 0.8rem;
     }
 
     .project-category {
-        margin-top: 35px;
+        margin-top: 30px;
+    }
+
+    .project-category:first-of-type {
+        margin-top: 20px;
     }
 
     .category-title {
-        font-size: 1.15rem;
-        margin-bottom: 20px;
+        font-size: 1.1rem;
+        margin-bottom: 16px;
     }
 
     .project-grid {
-        gap: 16px;
+        gap: 14px;
     }
 
     .preview-card {
-        padding: 18px;
+        padding: 16px;
+    }
+
+    .preview-card-header {
+        gap: 8px;
+        flex-wrap: wrap;
     }
 
     .preview-card-header h4 {
-        font-size: 1.05rem;
+        font-size: 1rem;
     }
 
     .preview-card-desc {
-        font-size: 0.88rem;
+        font-size: 0.82rem;
+        line-height: 1.5;
     }
 
     .status-badge {
-        font-size: 0.7rem;
-        padding: 3px 10px;
+        font-size: 0.68rem;
+        padding: 3px 9px;
     }
 
     .card-link {
-        font-size: 0.88rem;
+        font-size: 0.82rem;
     }
 
     .contact-title {
-        font-size: 1.3rem;
+        font-size: 1.25rem;
     }
 
     .contact-para {
-        font-size: 0.88rem;
+        font-size: 0.82rem;
+        padding: 0 5px;
     }
 
     input, textarea {
-        padding: 10px;
-        font-size: 15px;
+        padding: 11px;
+        font-size: 16px;
     }
 
     textarea {
-        min-height: 120px;
+        min-height: 110px;
+    }
+
+    #contactForm button {
+        min-width: 140px;
+        margin: 16px auto 0;
     }
 
     .modal-content {
-        width: 98%;
-        height: 80vh;
-        margin: 10px;
+        width: 96%;
+        height: 78vh;
+        margin: 10px auto;
+        border-radius: 10px;
+    }
+
+    .close {
+        font-size: 28px;
+        right: 10px;
+        top: 6px;
+        width: 34px;
+        height: 34px;
     }
 }
