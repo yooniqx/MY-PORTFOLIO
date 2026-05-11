@@ -61,8 +61,10 @@ nav a:hover::after {
 /* MOBILE MENU */
 .menu-toggle {
     display: none;
-    font-size: 14px;
+    font-size: 28px;
     cursor: pointer;
+    padding: 5px;
+    color: white;
 }
 
 .webdesigner {
@@ -514,15 +516,37 @@ input:focus, textarea:focus {
 
 /* RESPONSIVE */
 @media(max-width: 768px){
-    .menu-toggle { display: block; }
+    body {
+        padding-top: 70px;
+    }
+
+    header {
+        padding: 15px 25px;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
 
     nav {
         position: absolute;
-        top: 70px;
+        top: 60px;
         right: 0;
-        background: #1e293b;
+        left: 0;
+        background: rgba(30, 41, 59, 0.98);
+        backdrop-filter: blur(10px);
         flex-direction: column;
         display: none;
+        padding: 20px;
+        border-radius: 0 0 12px 12px;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    nav a {
+        margin: 10px 0;
+        padding: 10px;
+        text-align: center;
+        font-size: 16px;
     }
 
     nav.active {
@@ -531,24 +555,91 @@ input:focus, textarea:focus {
 
     .hero {
         flex-direction: column;
-        padding: 40px 30px 0;
+        padding: 30px 20px 0;
+        min-height: auto;
+    }
+
+    .hero-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .hero-avatar {
+        width: 120px;
+        height: 120px;
+        margin: 0 auto 20px;
+    }
+
+    .name {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .webdesigner {
+        font-size: 18px;
+        text-align: center;
+    }
+
+    .about {
+        font-size: 0.9rem;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .connections {
+        justify-content: center;
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+        margin: 0 auto;
+    }
+
+    #home button {
+        display: block;
+        margin: 10px auto 0;
     }
 
     .blob1 {
         position: relative;
         width: 100%;
         height: auto;
-        margin-top: 40px;
+        margin-top: 30px;
         right: 0;
         top: 0;
     }
 
-    .name {
-        font-size: 2rem;
+    .blob-card {
+        padding: 24px;
+    }
+
+    .blob-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .blob-card p {
+        font-size: 0.9rem;
     }
 
     section {
-        padding: 60px 30px;
+        padding: 50px 20px;
+    }
+
+    section h2 {
+        font-size: 1.8rem;
+        text-align: center;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+        gap: 15px;
+    }
+
+    .card {
+        padding: 15px;
+        font-size: 0.9rem;
     }
 
     .project-grid {
@@ -558,23 +649,204 @@ input:focus, textarea:focus {
 
     .category-title {
         font-size: 1.3rem;
-    }
-}
-
-@media(max-width: 480px){
-    header {
-        padding: 20px 30px;
-    }
-
-    .name {
-        font-size: 1.8rem;
+        text-align: center;
     }
 
     .preview-card {
         padding: 20px;
     }
 
-    .preview-card-header h4 {
+    .contact-title {
+        font-size: 1.5rem;
+        text-align: center;
+    }
+
+    .contact-para {
+        text-align: center;
+        font-size: 0.95rem;
+    }
+
+    input, textarea {
+        font-size: 16px;
+    }
+
+    #contactForm button {
+        width: 100%;
+        max-width: 200px;
+        margin: 18px auto 0;
+        display: block;
+    }
+
+    .modal-content {
+        width: 95%;
+        height: 85vh;
+        margin: 20px;
+    }
+
+    .close {
+        font-size: 35px;
+        right: 15px;
+        top: 5px;
+        z-index: 10;
+        background: rgba(0,0,0,0.5);
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+    }
+}
+
+@media(max-width: 480px){
+    body {
+        padding-top: 65px;
+    }
+
+    header {
+        padding: 12px 20px;
+    }
+
+    .logo {
         font-size: 1.1rem;
+    }
+
+    .menu-toggle {
+        font-size: 24px;
+    }
+
+    nav {
+        top: 55px;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 15px;
+        margin: 8px 0;
+    }
+
+    .hero {
+        padding: 20px 15px 0;
+    }
+
+    .hero-avatar {
+        width: 100px;
+        height: 100px;
+    }
+
+    .name {
+        font-size: 1.6rem;
+    }
+
+    .webdesigner {
+        font-size: 16px;
+    }
+
+    .about {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    .connections {
+        font-size: 0.85rem;
+        gap: 8px;
+    }
+
+    .connections p {
+        font-size: 0.85rem;
+    }
+
+    .btn {
+        padding: 10px 16px;
+        font-size: 15px;
+    }
+
+    .blob-card {
+        padding: 20px;
+    }
+
+    .blob-card h3 {
+        font-size: 1.1rem;
+    }
+
+    .blob-card p {
+        font-size: 0.85rem;
+        line-height: 1.6;
+    }
+
+    section {
+        padding: 40px 15px;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .cards {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        gap: 12px;
+    }
+
+    .card {
+        padding: 12px;
+        font-size: 0.85rem;
+    }
+
+    .project-category {
+        margin-top: 35px;
+    }
+
+    .category-title {
+        font-size: 1.15rem;
+        margin-bottom: 20px;
+    }
+
+    .project-grid {
+        gap: 16px;
+    }
+
+    .preview-card {
+        padding: 18px;
+    }
+
+    .preview-card-header h4 {
+        font-size: 1.05rem;
+    }
+
+    .preview-card-desc {
+        font-size: 0.88rem;
+    }
+
+    .status-badge {
+        font-size: 0.7rem;
+        padding: 3px 10px;
+    }
+
+    .card-link {
+        font-size: 0.88rem;
+    }
+
+    .contact-title {
+        font-size: 1.3rem;
+    }
+
+    .contact-para {
+        font-size: 0.88rem;
+    }
+
+    input, textarea {
+        padding: 10px;
+        font-size: 15px;
+    }
+
+    textarea {
+        min-height: 120px;
+    }
+
+    .modal-content {
+        width: 98%;
+        height: 80vh;
+        margin: 10px;
     }
 }
