@@ -17,12 +17,12 @@ A modern, responsive portfolio website showcasing skills, projects, and professi
 - **[Task Tracker](https://tasktracker-b06.pages.dev/)** - Modern task management application with real-time updates
 - **[Fitzeous](https://fitzeous-fitness.pages.dev/)** - Fitness tracking platform with workout plans and progress monitoring
 - **[Flora.com](https://flora-com.pages.dev/)** - E-commerce platform for plant enthusiasts and gardeners
+- **[EXPLORE](https://explore-923.pages.dev/)** - Comprehensive travel destination information platform
 
 ## 📦 GitHub Repository Projects
 
 - **[Feedback Portal](https://github.com/yooniqx/FeedbackPortal)** - User feedback collection and management system
 - **[Chat App](https://github.com/yooniqx/ChatApp)** - Real-time messaging application with modern UI
-- **[Tourism Detail Site](https://github.com/yooniqx/EXPLORE)** - Comprehensive travel destination information platform
 - **[Kolkata Travel Blog](https://github.com/yooniqx/KOLKATA-TRAVEL-BLOG)** - Personal travel blog showcasing Kolkata's culture and attractions
 
 ## 🛠️ Technologies Used
